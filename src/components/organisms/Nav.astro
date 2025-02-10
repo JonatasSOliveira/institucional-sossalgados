@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<script>
+  function toggleMenu() {
+    console.log("teste");
+    const sidebar = document.getElementById("sidebar");
+    sidebar?.classList.toggle("translate-x-full");
+  }
+
+  // Garante que os botões tenham os eventos corretamente atribuídos
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("menuButton")?.addEventListener("click", toggleMenu);
+    document.getElementById("closeButton")?.addEventListener("click", toggleMenu);
+  });
+</script>
+
+<!-- Ícone do Menu -->
+<div class="lg:hidden absolute top-5 right-5">
+  <button id="menuButton">
+    <Icon name="mdi:menu" class="w-8 h-8" />
+  </button>
+</div>
+
+<!-- Sidebar -->
+<aside
+  id="sidebar"
+  class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-5 z-50 flex flex-col space-y-4 transform translate-x-full transition-transform duration-300"
+>
+  <button id="closeButton" class="self-end text-gray-600">
+    ✕ Fechar
+  </button>
+  <nav>
+    <ul class="flex flex-col gap-4">
+      <li><a class="bg-orange-primary p-3 font-bold rounded-xl block" href="#">Início</a></li>
+      <li><a class="bg-orange-primary p-3 font-bold rounded-xl block" href="#">Quem somos?</a></li>
+      <li><a class="bg-orange-primary p-3 font-bold rounded-xl block" href="#">Nossos produtos</a></li>
+      <li><a class="bg-orange-primary p-3 font-bold rounded-xl block" href="#">Peça agora</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<nav class="hidden lg:flex lg:flex-1 lg:items-center">
+  <ul class="flex gap-4">
+    <li>
+      <a class="bg-orange-primary p-3 font-bold rounded-xl" href="#">Início</a>
+    </li>
+    <li>
+      <a class="bg-orange-primary p-3 font-bold rounded-xl" href="#"
+        >Quem somos?</a
+      >
+    </li>
+    <li>
+      <a class="bg-orange-primary p-3 font-bold rounded-xl" href="#"
+        >Nossos produtos</a
+      >
+    </li>
+    <li>
+      <a class="bg-orange-primary p-3 font-bold rounded-xl" href="#"
+        >Peça agora</a
+      >
+    </li>
+  </ul>
+</nav>
