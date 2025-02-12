@@ -14,11 +14,7 @@ import "../styles/global.css";
 
   <body>
     <slot />
-
-    <!-- Importa o script de animação após o conteúdo para garantir que o DOM esteja pronto -->
-		<script type="module">
-      import "/src/scripts/fade-up.ts";
-    </script>
+		<script type="module" src="/src/scripts/fade-up.ts"></script>
   </body>
 </html>
 
