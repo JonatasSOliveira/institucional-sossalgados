@@ -3,71 +3,81 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/organisms/Nav.astro";
 import Footer from "../components/organisms/Footer.astro";
 import { Icon } from "astro-icon/components";
+import productsJson from "../content/products.json";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<div class="bg-white min-h-screen flex flex-col w-full">
-		<header
-			class="bg-black-primary flex rounded-b-4xl text-white px-10 py-2 h-20"
-		>
+		<header class="bg-black-primary flex rounded-b-4xl text-white px-10 py-2">
 			<div class="flex-1 flex justify-center items-center">
-				<h1 class="text-2xl">(LOGO) S.O.S SALGADOS</h1>
+				<img src="/images/logo.jpg" alt="S.O.S Salgados" />
 			</div>
 			<Nav />
 		</header>
-		<div
-			id="products"
-			class="bg-white flex flex-col items-center py-5 flex-grow justify-center gap-2 px-10"
-		>
-			<div class="w-full flex flex-col lg:flex-row justify-center gap-2">
-				<img
-					src="/images/salgadosfestas.jpg"
-					alt="Mini Salgados"
-					class="w-full rounded-tl-3xl rounded-br-3xl max-w-100"
-				/>
-				<div class="lg:max-w-100 lg:mt-10 flex flex-col gap-2 ">
-					<h3 class="text-xl font-bold text-orange-primary">
-						Salgadinhos Tamanho Festa
-					</h3>
-					<p class="text-justify">
-						O kit perfeito para quem busca uma variedade deliciosa de petiscos
-						para uma satisfação em cada mordida. nao vai leite e nem ovo na
-						massa.
-					</p>
+		<section id="products" class="bg-white py-5 flex-grow px-10">
+			<div
+				class="flex flex-col items-center w-full h-full gap-2 justify-center animate-fade-up"
+			>
+				<h2 class="text-2xl text-orange-primary font-bold">
+					Conheça nossos produtos
+				</h2>
+				<div
+					class="w-full flex flex-col lg:flex-row justify-center gap-2"
+				>
+					<img
+						src="/images/salgadosfestas.jpg"
+						alt="Imagem de mini salgados variados"
+						class="w-full rounded-tl-3xl rounded-br-3xl max-w-100 anima"
+					/>
+					<div class="lg:max-w-100 lg:mt-10 flex flex-col gap-2">
+						<h3 class="text-lg font-bold text-orange-primary">
+							{productsJson[0].name}
+						</h3>
+						<p class="text-justify text-base">
+							{productsJson[0].description}
+						</p>
+					</div>
 				</div>
+				<a
+					href="#"
+					target="_blank"
+					class="bg-orange-primary px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md text-white"
+					aria-label="Ver cardápio completo"
+				>
+					Cardápio completo
+				</a>
 			</div>
-			<a
-				href="#"
-				target="_blank"
-				class="bg-orange-primary px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md text-white"
-			>
-				Cardápio completo
-			</a>
-		</div>
-		<div
+		</section>
+		<section
 			id="order"
-			class="flex justify-center flex-col bg-orange-primary items-center py-2 rounded-t-4xl gap-2 text-white w-full"
+			class="bg-orange-primary py-2 rounded-t-4xl text-white w-full"
 		>
-			<h2 class="text-xl font-bold">Peça agora mesmo!</h2>
-			<a
-				href="https://wa.me/554498580285?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido"
-				target="_blank"
-				class="bg-green-whatsapp px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md"
+			<div
+				class="h-full w-full flex justify-center flex-col items-center gap-2 animate-fade-up"
 			>
-				<Icon name="mdi:whatsapp" />
-				Whatsapp
-			</a>
-			<a
-				href="https://www.ifood.com.br/delivery/paranavai-pr/sos-salgados-e-doces-residencial-laranjeiras/c5eca932-9b04-491e-8950-dfdc3117e35d"
-				target="_blank"
-				class="bg-red-ifood px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md"
-			>
-				<Icon name="simple-icons:ifood" />
-				Ifood
-			</a>
-		</div>
+				<h2 class="text-xl font-bold">Peça agora mesmo!</h2>
+				<a
+					href="https://wa.me/554498580285?text=Ol%C3%A1,%20gostaria%20de%20fazer%20um%20pedido"
+					target="_blank"
+					class="bg-green-whatsapp px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md"
+					aria-label="Pedir pelo whatsapp"
+				>
+					<Icon name="mdi:whatsapp" />
+					Whatsapp
+				</a>
+				<a
+					href="https://www.ifood.com.br/delivery/paranavai-pr/sos-salgados-e-doces-residencial-laranjeiras/c5eca932-9b04-491e-8950-dfdc3117e35d"
+					target="_blank"
+					class="bg-red-ifood px-3 py-2 rounded-xl flex justify-center items-center gap-2 w-50 text-lg shadow-md"
+					aria-label="Pedir pelo Ifood"
+				>
+					<Icon name="simple-icons:ifood" />
+					Ifood
+				</a>
+			</div>
+		</section>
 		<Footer />
 	</div>
 </Layout>

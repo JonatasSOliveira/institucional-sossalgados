@@ -3,16 +3,37 @@ import { Icon } from "astro-icon/components";
 ---
 
 <footer class="w-full">
-  <div class="bg-charcoal-gray flex flex-col w-full justify-center items-center text-white py-3 gap-4 lg:flex-row lg:justify-evenly lg:gap-0">
-    <div class="flex flex-col justify-center items-center">
-      <h3 class="text-lg font-bold">Onde nos encontrar?</h3>
-      <p>Paranavaí - PR</p>
+  <div class="bg-charcoal-gray w-full text-white">
+    <div
+      class="animate-fade-up flex flex-col w-full h-full justify-center items-center py-3 gap-4 lg:flex-row lg:justify-evenly lg:gap-0"
+    >
+      <div class="flex flex-col gap-2 lg:flex-row lg:gap-4">
+        <address  class="flex flex-col justify-center items-center">
+          <h3 class="text-lg font-bold">Onde nos encontrar?</h3>
+          <p>Rua Pedro Moretti, 505 - Residencial Laranjeiras</p>
+          <p>Paranavaí - PR</p>
+          <p>CEP: 87708-326</p>
+        </address>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.9359978325247!2d-52.45584612390465!3d-23.099438644786133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9492960cf322495f%3A0xb5e2308333614694!2sR.%20Q.%20A%2C%20505%20-%20Vila%20Operaria%2C%20Paranava%C3%AD%20-%20PR%2C%2087708-320!5e0!3m2!1spt-BR!2sbr!4v1739362057587!5m2!1spt-BR!2sbr"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="flex flex-col justify-center items-center">
+        <h3 class="text-lg font-bold">Fique por dentro das novidades</h3>
+        <a
+          href="https://www.instagram.com/sos_salgados_michelealmeida/"
+          target="_blank"
+          aria-label="Visite nosso Instagram"
+        >
+          <Icon name="mdi:instagram" class="w-8 h-8" />
+        </a>
+      </div>
     </div>
-    <div class="flex flex-col justify-center items-center">
-      <h3 class="text-lg font-bold">Fique por dentro das novidades</h3>
-      <a href="https://www.instagram.com/sos_salgados_michelealmeida/" target="_blank">
-        <Icon name="mdi:instagram" class="w-8 h-8" />
-      </a>
-    </div>
+  </div>
+  <div class="bg-gray-700 w-full justify-center items-center py-3 text-white flex">
+    <p class="text-sm">Desenvolvimento: Jonatas S. Oliveira</p>
   </div>
 </footer>

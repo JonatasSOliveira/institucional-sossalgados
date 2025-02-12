@@ -9,18 +9,12 @@ import { Icon } from "astro-icon/components";
     sidebar?.classList.toggle("translate-x-full");
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document
-      .getElementById("menuButton")
-      ?.addEventListener("click", toggleMenu);
-    document
-      .getElementById("closeButton")
-      ?.addEventListener("click", toggleMenu);
-  });
+  document.getElementById("menuButton")?.addEventListener("click", toggleMenu);
+  document.getElementById("closeButton")?.addEventListener("click", toggleMenu);
 </script>
 
 <div class="lg:hidden absolute top-5 right-5">
-  <button id="menuButton">
+  <button id="menuButton" aria-label="Abrir menu">
     <Icon name="mdi:menu" class="w-8 h-8" />
   </button>
 </div>
@@ -28,7 +22,13 @@ import { Icon } from "astro-icon/components";
   id="sidebar"
   class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-5 z-50 flex flex-col space-y-4 transform translate-x-full transition-transform duration-300"
 >
-  <button id="closeButton" class="self-end text-gray-600"> ✕ Fechar </button>
+  <button
+    id="closeButton"
+    class="self-end text-gray-600"
+    aria-label="Fechar menu"
+  >
+    ✕ Fechar
+  </button>
   <nav>
     <ul class="flex flex-col gap-4">
       <li>
